@@ -1,0 +1,94 @@
+import { Typography, Box } from "@mui/material";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
+const Home = () => {
+    const text = "Creating Scalable Web Solutions";
+
+    return (
+        <>
+            <Typography id="home" variant="h3" color="white">.</Typography>
+            <Box
+                id="home"
+                height="max-content"
+                display="grid"
+                gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }} // Stack in xs, side by side in md
+                gap={3}
+                sx={{
+                    padding: { xs: "1rem", sm: "2rem", md: "2rem 5rem" },
+                    textAlign: { xs: "center", md: "left" }, // Center text on small screens
+                }}
+            >
+                <div data-aos="fade-right">
+                    <Box>
+                        <Box
+                            p={{ xs: 2, sm: 5 }}
+                            display="flex"
+                            flexDirection="column"
+                            alignItems={{ xs: "center", md: "flex-start" }}
+                            justifyContent="center"
+                            color="#212529"
+                            mt={{ xs: 5, md: 10 }}
+                        >
+                            <Typography
+                                fontFamily="Quicksand"
+                                fontWeight={500}
+                                sx={{
+                                    fontSize: { xs: "24px", sm: "40px" },
+                                    padding: { xs: "0.5rem", sm: "1rem" },
+                                }}
+                            >
+                                Hi There!
+                            </Typography>
+                            <Typography
+                                fontFamily="Quicksand"
+                                fontSize={{ xs: "32px", sm: "50px" }}
+                                display="inline-flex"
+                                alignItems="center"
+                                fontWeight={500}
+                            >
+                                I'm
+                                <span
+                                    style={{
+                                        fontSize: "inherit",
+                                        fontWeight: "bolder",
+                                        marginLeft: "8px",
+                                        fontFamily: "Quicksand",
+                                    }}
+                                >
+                                    Beki Junior
+                                </span>
+                            </Typography>
+                            <Typography
+                                fontFamily="Quicksand"
+                                fontSize={{ xs: "20px", sm: "30px" }}
+                                mt={3}
+                                mb={3}
+                                fontWeight={500}
+                            >
+                                {text}
+                                <Cursor cursorColor="black" />
+                            </Typography>
+                            <Box
+                                display="flex"
+                                justifyContent={{ xs: "center", md: "flex-start" }}
+                                gap={2}
+                                sx={{ marginTop: 2 }}
+                            >
+                                <img src="icons/vscodeblack.svg" alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/githubblack.svg" alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/vercelblack.svg" alt="icon" width="40px" data-aos="fade-right" />
+                            </Box>
+                        </Box>
+                    </Box>
+                </div>
+                <div data-aos="fade-left">
+                    <Box display="flex" justifyContent="center">
+                        <img src="person.svg" alt="Person.svg" width="80%" style={{ maxWidth: "350px" }} />
+                    </Box>
+                </div>
+            </Box>
+        </>
+    );
+};
+
+export default Home;
