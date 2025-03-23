@@ -2,8 +2,17 @@ import { Typography, Box } from "@mui/material";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Home = () => {
-    const text = "Creating Scalable Web Solutions";
-
+    const [text] = useTypewriter({
+        words: [
+            "Full-Stack Web Developer",
+            "MERN Stack Specialist",
+            "Creating Scalable Web Solutions",
+        ],
+        loop: true, // Loop the texts
+        typeSpeed: 100, // Typing speed
+        deleteSpeed: 50, // Deleting speed
+        delaySpeed: 1000, // Delay between texts
+    });
     return (
         <>
             <Typography id="home" variant="h3" color="white">.</Typography>
