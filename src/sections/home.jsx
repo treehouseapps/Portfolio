@@ -64,7 +64,7 @@ const Home = () => {
                                         fontFamily: "Quicksand",
                                     }}
                                 >
-                                    Beki Junior
+                                    Bereket Tsegaye
                                 </span>
                             </Typography>
                             <Typography
