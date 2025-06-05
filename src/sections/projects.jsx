@@ -8,31 +8,43 @@ const Projects = () => {
 
     const projects = [
         {
-            id: 1, name: 'URL Shortener', img: './ttrim.png',
+            id: 1, name: 'Full Stack E-Commerce Web Application', img: './ecommerce.png',
+            desc: 'A responsive E-Commerce app built with React and Material UI. Users can browse products, manage a cart, and checkout seamlessly. It features real-time updates, smooth navigation, and a clean, user-friendly design.',
+            link: 'https://th-ecommerce.vercel.app/',
+            github: 'https://github.com/treehouseapps/E-commerce'
+        },
+        {
+            id: 2, name: 'Online Bus Ticket Booking System', img: './bus.png',
+            desc: 'An online bus ticket booking system for searching routes, booking seats, and managing reservations. It includes a secure admin dashboard for handling buses, routes, users, and feedback — all built for a smooth, user-friendly experience.',
+            link: 'https://th-bus-booking.vercel.app/',
+            github: 'https://github.com/treehouseapps/Bus-booking'
+        },
+        {
+            id: 3, name: 'URL Shortener', img: './ttrim.png',
             desc: 'A simple and efficient URL shortener that converts long links into short, shareable URLs. It ensures quick redirection, easy tracking, and a clean user experience.',
             link: 'https://ttrim.vercel.app',
             github: 'https://github.com/treehouseapps/shortner'
         },
         {
-            id: 2, name: 'Employee Management System', img: './employee.png',
+            id: 4, name: 'Employee Management System', img: './employee.png',
             desc: 'A simple web app for managing employee records efficiently. It allows adding, viewing, updating, and deleting employee data with a clean and user-friendly interface.',
             link: 'https://th-employee-management-system.vercel.app/',
             github: 'https://github.com/treehouseapps/Employee-Management-System'
         },
         {
-            id: 3, name: 'Weather App', img: './weather.png',
+            id: 5, name: 'Weather App', img: './weather.png',
             desc: 'A simple weather app built with React that lets users search for the current weather by city name.The app is responsive and provides a smooth user experience across devices.',
             link: 'https://th-weather-app.vercel.app/',
             github: 'https://github.com/treehouseapps/weather_app'
         },
         {
-            id: 4, name: 'Notebook App', img: './note.png',
+            id: 6, name: 'Notebook App', img: './note.png',
             desc: 'A simple and organized web app for creating, editing, and managing notes. It offers a clean interface for easy note-taking and retrieval.',
             link: 'https://wallnote-frontend.vercel.app/',
             github: 'https://github.com/treehouseapps/wallnote-frontend'
         },
         {
-            id: 5, name: 'Authentication System', img: './auth.png',
+            id: 7, name: 'Authentication System', img: './auth.png',
             desc: 'A secure and user-friendly login and registration system for seamless access control. It ensures smooth user authentication and data protection.',
             link: 'https://secure-user-frontend.vercel.app/',
             github: 'https://github.com/treehouseapps/PRODIGY_FS_01'
