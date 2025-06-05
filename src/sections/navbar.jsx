@@ -1,11 +1,21 @@
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navItems = [
         { id: 1, text: "Home", link: "#home" },
@@ -20,7 +30,7 @@ const Navbar = () => {
 
     return (
         <Box>
-            <AppBar position="fixed" sx={{ backgroundColor: "transparent", color: "black", boxShadow: 'none' }}>
+            <AppBar position="fixed" sx={{ backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent", color: "black", boxShadow: 'none' }}>
                 <Toolbar sx={{ border: 'none', padding: '1rem 2rem', margin: '0 1rem', color: '#212529', display: 'flex', justifyContent: 'space-between' }}>
 
                     <a href="#home" style={{ textDecoration: 'none' }}>
@@ -40,7 +50,7 @@ const Navbar = () => {
                     <Box sx={{
                         display: { xs: "none", md: "flex" },
                         justifyContent: 'space-around',
-                        marginRight: '0rem', width: '60%'
+                        marginRight: '0rem', width: '60%',
                     }}>
                         {navItems.map((item) => (
                             <Button key={item.text}
