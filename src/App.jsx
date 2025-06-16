@@ -9,6 +9,7 @@ import About from "./sections/about";
 import Projects from "./sections/projects";
 import Skills from "./sections/skills";
 import Contact from "./sections/contact";
+import Footer from "./sections/footer";
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
         <Skills />
         <Projects />
         <Contact />
+        <Footer />
       </Box >
     </>
   );
