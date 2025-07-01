@@ -1,6 +1,22 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, TextField, Button } from "@mui/material";
+import { useState } from "react";
 
 const Contact = () => {
+    const [link, setLink] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSendEmail = () => {
+        if (!name || !email || !message) {
+            alert("Please fill in all fields before sending.");
+            return;
+        }
+
+        setLink(`https://mail.google.com/mail/?view=cm&fs=1&to=bbekijunior1@gmail.com&su=Greeting from ${name}&body=${encodeURIComponent(message)}%0D%0DFrom: ${encodeURIComponent(name)}`)
+    }
+
+
     return (
         <Box height="max-content" p={2}>
             <Typography
@@ -71,7 +87,132 @@ const Contact = () => {
                 </Box>
 
                 <Box mt={{ xs: 3, md: 5 }} display="flex" justifyContent="center">
-                    <img src="./computer.jpg" alt="person" style={{ width: "100%", maxWidth: "400px", borderRadius: "10px" }} />
+                    <Box
+                        sx={{
+                            backgroundImage: "url(./computer.jpg)",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            backgroundColor: "black",
+                            p: 4,
+                            borderRadius: 2,
+                            maxWidth: 600,
+                            mx: "auto",
+                            boxShadow: 3,
+                            color: "white",
+                        }}
+                    >
+                        <Box
+                            display="flex"
+                            flexDirection={{ xs: "column", sm: "row" }}
+                            gap={2}
+                            mb={2}
+                            alignItems="center"
+                            justifyContent="center"
+                        >
+                            <TextField
+                                fullWidth
+                                label="Name"
+                                variant="outlined"
+                                InputLabelProps={{ style: { color: "white" } }}
+                                InputProps={{
+                                    style: { color: "white", borderColor: "white" },
+                                }}
+                                sx={{
+                                    "& .MuiOutlinedInput-root": {
+                                        "& fieldset": {
+                                            borderColor: "white",
+                                        },
+                                        "&:hover fieldset": {
+                                            borderColor: "#ccc",
+                                        },
+                                        "&.Mui-focused fieldset": {
+                                            borderColor: "white",
+                                        },
+                                    },
+                                }}
+                                data-aos='zoom-in'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+
+                            />
+                            <TextField
+                                fullWidth
+                                label="Email"
+                                variant="outlined"
+                                InputLabelProps={{ style: { color: "white" } }}
+                                InputProps={{
+                                    style: { color: "white" },
+                                }}
+                                sx={{
+                                    "& .MuiOutlinedInput-root": {
+                                        "& fieldset": {
+                                            borderColor: "white",
+                                        },
+                                        "&:hover fieldset": {
+                                            borderColor: "#ccc",
+                                        },
+                                        "&.Mui-focused fieldset": {
+                                            borderColor: "white",
+                                        },
+                                    },
+                                }}
+                                data-aos='zoom-in'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </Box>
+
+                        <Typography variant="body1" component="label" htmlFor="message" sx={{ display: "block", mb: 1, color: "white" }}>
+                            Message
+                        </Typography>
+                        <TextField
+                            id="message"
+                            multiline
+                            rows={5}
+                            fullWidth
+                            placeholder="Write your message..."
+                            variant="outlined"
+                            InputProps={{
+                                style: { color: "white" },
+                            }}
+                            InputLabelProps={{ style: { color: "white" } }}
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    "& fieldset": {
+                                        borderColor: "white",
+                                    },
+                                    "&:hover fieldset": {
+                                        borderColor: "#ccc",
+                                    },
+                                    "&.Mui-focused fieldset": {
+                                        borderColor: "white",
+                                    },
+                                },
+                            }}
+                            data-aos='zoom-in'
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
+                        <a href={name && message ? link : undefined}>
+                            <Button
+                                onClick={handleSendEmail}
+                                variant="outlined"
+                                sx={{
+                                    mt: 2,
+                                    color: "white",
+                                    borderColor: "white",
+                                    "&:hover": {
+                                        backgroundColor: "white",
+                                        color: "black",
+                                    },
+                                }}
+                            >
+                                Send Message
+                            </Button>
+                        </a>
+                    </Box>
+
+
                 </Box>
             </Box>
         </Box>
