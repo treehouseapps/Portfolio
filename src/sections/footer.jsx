@@ -10,7 +10,7 @@ const Footer = () => {
                 mt: "auto",
             }}
         >
-            <Typography variant="body2" color="textSecondary">
+            <Typography component="div" color="textSecondary">
                 <Box display={'inline-flex'} justifyContent={'space-between'}>
                     <Box>
                         Developed by Bereket Tsegaye .
