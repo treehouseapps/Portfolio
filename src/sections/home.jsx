@@ -92,7 +92,7 @@ const Home = () => {
                 </div>
                 <div data-aos="fade-left">
                     <Box display="flex" justifyContent="center">
-                        <img src="person.svg" alt="Person.svg" width="80%" style={{ maxWidth: "350px" }} />
+                        <img src="person.svg" alt="Person.svg" width="100%" style={{ maxWidth: "500px" }} />
                     </Box>
                 </div>
             </Box>
