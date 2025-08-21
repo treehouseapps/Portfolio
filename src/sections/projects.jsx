@@ -11,7 +11,8 @@ const Projects = () => {
             id: 1, name: 'Full Stack E-Commerce Web Application', img: './ecommerce.png',
             desc: 'A responsive E-Commerce app built with React and Material UI. Users can browse products, manage a cart, and checkout seamlessly. It features real-time updates, smooth navigation, and a clean, user-friendly design.',
             link: 'https://th-ecommerce.vercel.app/',
-            github: 'https://github.com/treehouseapps/E-commerce'
+            github: 'https://github.com/treehouseapps/E-commerce',
+            featured: true
         },
         {
             id: 2, name: 'Online Bus Ticket Booking System', img: './bus.png',
@@ -64,13 +65,149 @@ const Projects = () => {
                 sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}>
                 My Recent Projects
             </Typography>
+
+            {/* Featured Project */}
+            {projects.filter(project => project.featured).map((featuredProject) => (
+                <Box
+                    key={featuredProject.id}
+                    sx={{
+                        maxWidth: '1000px',
+                        margin: '0 auto 4rem auto',
+                        padding: { xs: 2, md: 4 },
+                    }}
+                >
+                    <Typography
+                        variant="h4"
+                        fontFamily="Quicksand"
+                        fontWeight="700"
+                        textAlign="center"
+                        mb={1}
+                        sx={{ color: (t) => t.palette.text.primary }}
+                        data-aos="fade-down"
+                    >
+                        Spotlight ✨
+                    </Typography>
+
+                    <Box
+                        sx={{
+                            backgroundColor: (t) => t.palette.background.paper,
+                            borderRadius: 4,
+                            boxShadow: 6,
+                            overflow: 'hidden',
+                            transition: 'all 0.3s ease-in-out',
+                            '&:hover': {
+                                transform: 'translateY(-8px)',
+                                boxShadow: 12,
+                            }
+                        }}
+                        data-aos="zoom-in"
+                    >
+                        <Box
+                            display="grid"
+                            gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
+                            gap={3}
+                            alignItems="center"
+                        >
+                            {/* Project Image */}
+                            <Box
+                                sx={{
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    height: { xs: '250px', md: '350px' },
+                                    backgroundColor: (t) => t.palette.action.hover,
+                                }}
+                            >
+                                <img
+                                    src={featuredProject.img}
+                                    alt={featuredProject.name}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        objectPosition: 'center',
+                                    }}
+                                />
+                            </Box>
+
+                            {/* Project Details */}
+                            <Box p={3}>
+                                <Typography
+                                    variant="h4"
+                                    fontFamily="Quicksand"
+                                    fontWeight="700"
+                                    mb={2}
+                                    sx={{ color: (t) => t.palette.text.primary }}
+                                >
+                                    {featuredProject.name}
+                                </Typography>
+
+                                <Typography
+                                    variant="body1"
+                                    fontFamily="Quicksand"
+                                    mb={3}
+                                    sx={{
+                                        color: (t) => t.palette.text.secondary,
+                                        lineHeight: 1.7,
+                                        fontSize: '1.1rem'
+                                    }}
+                                >
+                                    {featuredProject.desc}
+                                </Typography>
+
+                                <Box
+                                    display="flex"
+                                    gap={2}
+                                    flexWrap="wrap"
+                                    justifyContent={{ xs: "center", md: "flex-start" }}
+                                >
+                                    <Button
+                                        variant="contained"
+                                        size="large"
+                                        href={featuredProject.github}
+                                        target="_blank"
+                                        sx={{
+                                            backgroundColor: (t) => t.palette.primary.main,
+                                            '&:hover': {
+                                                backgroundColor: (t) => t.palette.primary.dark,
+                                            }
+                                        }}
+                                    >
+                                        <GitHubIcon sx={{ mr: 1 }} />
+                                        View Code
+                                    </Button>
+                                    <Button
+                                        variant="outlined"
+                                        size="large"
+                                        href={featuredProject.link}
+                                        target="_blank"
+                                        sx={{
+                                            borderColor: (t) => t.palette.primary.main,
+                                            color: (t) => t.palette.primary.main,
+                                            '&:hover': {
+                                                borderColor: (t) => t.palette.primary.dark,
+                                                backgroundColor: (t) => t.palette.primary.main,
+                                                color: (t) => t.palette.background.paper,
+                                            }
+                                        }}
+                                    >
+                                        <WebIcon sx={{ mr: 1 }} />
+                                        Live Demo
+                                    </Button>
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Box>
+            ))}
+
             <Box display='flex' alignItems='center' justifyContent='center'>
+
                 <Box display='grid'
                     gridTemplateColumns={isSmallScreen ? '1fr' : isMediumScreen ? '1fr 1fr' : '1fr 1fr 1fr'}
                     gap={5}
                     p={isSmallScreen ? 2 : 8}
                 >
-                    {projects.map((item) => (
+                    {projects.filter(project => !project.featured).map((item) => (
                         <Box
                             key={item.id}
                             p={3}
