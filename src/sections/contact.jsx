@@ -26,11 +26,10 @@ const Contact = () => {
                 fontFamily="Quicksand"
                 fontWeight="900"
                 width="100%"
-                color="#212529"
                 p={2}
                 align="center"
                 data-aos="fade-right"
-                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" } }}
+                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}
             >
                 Find Me On
             </Typography>
@@ -60,7 +59,7 @@ const Contact = () => {
                         ].map((item, index) => (
                             <a key={index} href={item.link} style={{ textDecoration: "none" }}>
                                 <Box
-                                    boxShadow="0px 0px 5px 0px #333"
+                                    boxShadow={(t) => t.palette.boxShadow}
                                     p={2}
                                     borderRadius={5}
                                     data-aos="zoom-in"
@@ -71,13 +70,13 @@ const Contact = () => {
                                         transition: "all 0.3s ease-in-out",
                                         "&:hover": {
                                             transform: "scale(1.1)",
-                                            boxShadow: "0px 0px 15px 0px #333",
+                                            boxShadow: (t) => t.palette.boxShadow,
                                             cursor: "pointer",
                                         },
                                     }}
                                 >
                                     <img src={item.img} alt={item.label} width="80" />
-                                    <Typography fontFamily="Quicksand" color="black">
+                                    <Typography fontFamily="Quicksand" sx={{ color: (t) => t.palette.text.primary }}>
                                         {item.label}
                                     </Typography>
                                 </Box>
@@ -113,20 +112,20 @@ const Contact = () => {
                                 fullWidth
                                 label="Name"
                                 variant="outlined"
-                                InputLabelProps={{ style: { color: "white" } }}
+                                InputLabelProps={{ style: { color: (t) => t.palette.text.primary } }}
                                 InputProps={{
-                                    style: { color: "white", borderColor: "white" },
+                                    style: { color: (t) => t.palette.text.primary, borderColor: (t) => t.palette.text.primary },
                                 }}
                                 sx={{
                                     "& .MuiOutlinedInput-root": {
                                         "& fieldset": {
-                                            borderColor: "white",
+                                            borderColor: (t) => t.palette.text.primary,
                                         },
                                         "&:hover fieldset": {
                                             borderColor: "#ccc",
                                         },
                                         "&.Mui-focused fieldset": {
-                                            borderColor: "white",
+                                            borderColor: (t) => t.palette.text.primary,
                                         },
                                     },
                                 }}
@@ -139,20 +138,20 @@ const Contact = () => {
                                 fullWidth
                                 label="Email"
                                 variant="outlined"
-                                InputLabelProps={{ style: { color: "white" } }}
+                                InputLabelProps={{ style: { color: (t) => t.palette.text.primary } }}
                                 InputProps={{
-                                    style: { color: "white" },
+                                    style: { color: (t) => t.palette.text.primary },
                                 }}
                                 sx={{
                                     "& .MuiOutlinedInput-root": {
                                         "& fieldset": {
-                                            borderColor: "white",
+                                            borderColor: (t) => t.palette.text.primary,
                                         },
                                         "&:hover fieldset": {
                                             borderColor: "#ccc",
                                         },
                                         "&.Mui-focused fieldset": {
-                                            borderColor: "white",
+                                            borderColor: (t) => t.palette.text.primary,
                                         },
                                     },
                                 }}
@@ -173,19 +172,19 @@ const Contact = () => {
                             placeholder="Write your message..."
                             variant="outlined"
                             InputProps={{
-                                style: { color: "white" },
+                                style: { color: (t) => t.palette.text.primary },
                             }}
-                            InputLabelProps={{ style: { color: "white" } }}
+                            InputLabelProps={{ style: { color: (t) => t.palette.text.primary } }}
                             sx={{
                                 "& .MuiOutlinedInput-root": {
                                     "& fieldset": {
-                                        borderColor: "white",
+                                        borderColor: (t) => t.palette.text.primary,
                                     },
                                     "&:hover fieldset": {
                                         borderColor: "#ccc",
                                     },
                                     "&.Mui-focused fieldset": {
-                                        borderColor: "white",
+                                        borderColor: (t) => t.palette.text.primary,
                                     },
                                 },
                             }}
@@ -199,8 +198,8 @@ const Contact = () => {
                                 variant="outlined"
                                 sx={{
                                     mt: 2,
-                                    color: "white",
-                                    borderColor: "white",
+                                    color: (t) => t.palette.text.primary,
+                                    borderColor: (t) => t.palette.text.primary,
                                     "&:hover": {
                                         backgroundColor: "white",
                                         color: "black",

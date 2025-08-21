@@ -1,3 +1,11 @@
+:root {
+    --icon-filter: none;
+}
+
+[data-color-scheme="dark"] {
+    --icon-filter: invert(1) brightness(1.2);
+}
+
 #particles-js {
     position: absolute;
     top: 0;

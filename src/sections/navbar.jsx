@@ -1,12 +1,18 @@
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useState, useEffect } from "react";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import { useTheme } from "@mui/material/styles";
+import { useColorMode } from "../context/ThemeContext";
 
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const colorMode = useColorMode();
+    const theme = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,8 +36,8 @@ const Navbar = () => {
 
     return (
         <Box>
-            <AppBar position="fixed" sx={{ backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent", color: "black", boxShadow: 'none' }}>
-                <Toolbar sx={{ border: 'none', padding: '1rem 2rem', margin: '0 1rem', color: '#212529', display: 'flex', justifyContent: 'space-between' }}>
+            <AppBar position="fixed" sx={{ backgroundColor: scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent", color: (t) => t.palette.text.primary, boxShadow: 'none' }}>
+                <Toolbar sx={{ border: 'none', padding: '1rem 2rem', margin: '0 1rem', color: (t) => t.palette.text.primary, display: 'flex', justifyContent: 'space-between' }}>
 
                     <a href="#home" style={{ textDecoration: 'none' }}>
                         <Typography variant="h4" sx={{
@@ -40,7 +46,7 @@ const Navbar = () => {
                             fontWeight: 700,
                             fontSize: '4rem',
                             fontStyle: 'normal',
-                            color: '#212529',
+                            color: (t) => t.palette.text.primary,
                             marginRight: '2rem',
                         }}>
                             Beki Jr
@@ -69,12 +75,12 @@ const Navbar = () => {
                                         width: "0%",
                                         borderRadius: '1rem',
                                         height: "4px",
-                                        backgroundColor: "blue",
+                                        backgroundColor: (t) => t.palette.text.primary,
                                         transition: "width .5s ease-in-out",
                                     },
                                     "&:hover::after": {
                                         width: "100%",
-                                        backgroundColor: 'none'
+                                        backgroundColor: (t) => t.palette.text.primary
                                     },
                                 }}
                                 color="inherit"
@@ -102,6 +108,9 @@ const Navbar = () => {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <IconButton onClick={colorMode.toggle}>
+                        {theme.palette.mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+                    </IconButton>
                 </Toolbar>
             </AppBar>
 
@@ -114,7 +123,7 @@ const Navbar = () => {
                     gridTemplateColumns={'1fr'}>
                     {navItems.map((item) => (
                         <Button key={item.text}
-                            color="#333"
+                            color={(t) => t.palette.text.primary}
                             href={item.link}
                             onClick={handleDrawerToggle}>
 

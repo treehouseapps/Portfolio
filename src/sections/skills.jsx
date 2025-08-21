@@ -15,30 +15,29 @@ const Skills = () => {
         <>
             {/* Skills Section */}
             <Box height="max-content">
-                <Typography id="skills" variant="h3" color="white">.</Typography>
+                <Typography id="skills" variant="h3" sx={{ color: (t) => t.palette.text.primary }}>.</Typography>
                 <Typography
                     variant="h4"
                     mt={4}
                     fontFamily="Quicksand"
                     fontWeight="900"
-                    color="#212529"
                     p={2}
                     align="center"
                     data-aos="fade-right"
-                    sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" } }}
+                    sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}
                 >
                     <QuestionMarkIcon fontSize="large" /> Skills and Technologies
                 </Typography>
 
                 <Typography
                     fontFamily="Quicksand"
-                    backgroundColor="whitesmoke"
+                    backgroundColor={(t) => t.palette.background.paper}
                     borderRadius="50px"
                     letterSpacing={1}
                     p={{ xs: "0rem 1rem", sm: "0.5rem 5rem" }}
                     data-aos="zoom-out"
                     fontStyle="italic"
-                    color="#6C757D"
+                    sx={{ color: (t) => t.palette.text.secondary }}
                     fontSize={{ xs: "16px", sm: "20px" }}
                     mx={{ xs: "0", sm: "10rem" }}
                     textAlign="center"
@@ -71,7 +70,7 @@ const Skills = () => {
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
-                                boxShadow="0px 4px 10px #333"
+                                boxShadow={(t) => t.palette.boxShadow}
                                 sx={{
                                     backgroundColor: "transparent",
                                     borderRadius: "8px",
@@ -98,18 +97,17 @@ const Skills = () => {
                     mt={4}
                     fontFamily="Quicksand"
                     fontWeight="900"
-                    color="#212529"
                     p={2}
                     align="center"
                     data-aos="fade-right"
-                    sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" } }}
+                    sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}
                 >
                     Tools I Use
                 </Typography>
 
                 <Typography
                     fontFamily="Quicksand"
-                    backgroundColor="whitesmoke"
+                    backgroundColor={(t) => t.palette.action.hover}
                     borderRadius="50px"
                     letterSpacing={1}
                     p={{ xs: "0rem 1rem", sm: "0.5rem 5rem" }}
@@ -148,7 +146,7 @@ const Skills = () => {
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
-                                boxShadow="0px 4px 10px #333"
+                                boxShadow={(t) => t.palette.boxShadow}
                                 sx={{
                                     backgroundColor: "transparent",
                                     borderRadius: "8px",

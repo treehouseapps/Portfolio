@@ -1,7 +1,9 @@
 import { Typography, Box } from "@mui/material";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useTheme } from "@mui/material/styles";
 
 const Home = () => {
+    const theme = useTheme();
     const [text] = useTypewriter({
         words: [
             "Full-Stack Web Developer",
@@ -35,7 +37,7 @@ const Home = () => {
                             flexDirection="column"
                             alignItems={{ xs: "center", md: "flex-start" }}
                             justifyContent="center"
-                            color="#212529"
+                            sx={{ color: (t) => t.palette.text.primary }}
                             mt={{ xs: 5, md: 10 }}
                         >
                             <Typography
@@ -75,7 +77,7 @@ const Home = () => {
                                 fontWeight={500}
                             >
                                 {text}
-                                <Cursor cursorColor="black" />
+                                <Cursor cursorColor={theme.palette.text.primary} />
                             </Typography>
                             <Box
                                 display="flex"
@@ -83,9 +85,9 @@ const Home = () => {
                                 gap={2}
                                 sx={{ marginTop: 2 }}
                             >
-                                <img src="icons/vscodeblack.svg" alt="icon" width="40px" data-aos="fade-right" />
-                                <img src="icons/githubblack.svg" alt="icon" width="40px" data-aos="fade-right" />
-                                <img src="icons/vercelblack.svg" alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/vscodeblack.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/githubblack.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/vercelblack.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
                             </Box>
                         </Box>
                     </Box>

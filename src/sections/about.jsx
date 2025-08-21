@@ -4,7 +4,7 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 const About = () => {
     return (
         <Box height="max-content" px={{ xs: 2, sm: 4 }}>
-            <Typography id="about" variant="h3" color="white" >.</Typography>
+            <Typography id="about" variant="h3" sx={{ color: (t) => t.palette.text.primary }}>.</Typography>
             <Typography
                 variant="h4"
                 component="div"
@@ -12,11 +12,10 @@ const About = () => {
                 fontFamily="Quicksand"
                 fontWeight="900"
                 width="100%"
-                color="#212529"
                 p={2}
                 align="center"
                 data-aos="fade-right"
-                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" } }}
+                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}
             >
                 What I Do
             </Typography>
@@ -46,7 +45,7 @@ const About = () => {
                     data-aos="fade-left"
                     data-aos-duration="1000"
                     sx={{
-                        backgroundColor: "white",
+                        backgroundColor: (t) => t.palette.background.paper,
                         borderRadius: 2,
                         padding: 3,
                         maxWidth: "800px",
@@ -56,7 +55,7 @@ const About = () => {
                     <Typography
                         fontFamily="Quicksand"
                         fontSize={{ xs: "16px", sm: "18px" }}
-                        sx={{ color: "#212529", lineHeight: 1.6, fontWeight: 400 }}
+                        sx={{ color: (t) => t.palette.text.primary, lineHeight: 1.6, fontWeight: 400 }}
                         component="div" // ✅ FIX: Ensures no <p> wraps <Box>
                     >
                         <b>Full-Stack Web Developer</b> skilled in building modern, high-performance web applications.

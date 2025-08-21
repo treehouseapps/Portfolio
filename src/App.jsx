@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { useEffect } from "react";
 import ParticlesBackground from "./ParticlesBackground";
 import './style.css'
@@ -12,6 +12,7 @@ import Contact from "./sections/contact";
 import Footer from "./sections/footer";
 
 function App() {
+
   useEffect(() => {
     // Initialize AOS when the component mounts
     AOS.init({ duration: 1000, once: true });
@@ -25,7 +26,7 @@ function App() {
         fontFamily: 'Quicksand',
         height: 'max-content', display: 'flex',
         flexDirection: 'column', overflowX: 'hidden',
-        backgroundColor: '#F8F9FA'
+        backgroundColor: (t) => t.palette.background.default
       }}>
         <Navbar />
         <Home />

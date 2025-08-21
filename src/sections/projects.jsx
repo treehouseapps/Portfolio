@@ -53,16 +53,15 @@ const Projects = () => {
 
     return (
         <Box height='max-content'>
-            <Typography id='projects' variant="h3" color="white">.</Typography>
+            <Typography id='projects' variant="h3" sx={{ color: (t) => t.palette.text.primary }}>.</Typography>
             <Typography
                 variant="h3" mt={4}
                 fontFamily={'Quicksand'}
                 fontWeight='900'
                 width='100%'
-                color="#212529"
                 p={2} align="center"
                 data-aos="fade-right"
-                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" } }}>
+                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}>
                 My Recent Projects
             </Typography>
             <Box display='flex' alignItems='center' justifyContent='center'>
@@ -75,8 +74,8 @@ const Projects = () => {
                         <Box
                             key={item.id}
                             p={3}
-                            boxShadow='0px 4px 10px #333'
-                            backgroundColor='white'
+                            boxShadow={(t) => t.palette.boxShadow}
+                            backgroundColor={(t) => t.palette.background.paper}
                             zIndex={1}
                             borderRadius={3}
                             display="flex"
@@ -99,7 +98,7 @@ const Projects = () => {
                                 data-aos="zoom-in"
                                 alt=""
                                 style={{
-                                    border: '1px solid #333',
+                                    border: '1px solid',
                                     borderRadius: '5px',
                                     width: '100%',
                                     marginBottom: '1rem',

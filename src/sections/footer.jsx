@@ -4,13 +4,13 @@ const Footer = () => {
         <Box
             component="footer"
             sx={{
-                backgroundColor: "#f5f5f5",
+                backgroundColor: (t) => t.palette.background.paper,
                 padding: "1.5rem",
                 textAlign: "center",
                 mt: "auto",
             }}
         >
-            <Typography component="div" color="textSecondary">
+            <Typography component="div" sx={{ color: (t) => t.palette.text.secondary }}>
                 <Box display={'inline-flex'} justifyContent={'space-between'}>
                     <Box>
                         Developed by Bereket Tsegaye .
