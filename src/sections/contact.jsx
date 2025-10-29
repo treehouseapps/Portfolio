@@ -57,7 +57,7 @@ const Contact = () => {
                             { img: "icons/gmail.svg", label: "Gmail", link: "https://mail.google.com/mail/?view=cm&fs=1&to=bbekijunior1@gmail.com&su=Greeting&body=Hi%20There!" },
                             { img: "icons/githubblack.svg", label: "GitHub", link: "https://github.com/treehouseapps" }
                         ].map((item, index) => (
-                            <a key={index} href={item.link} style={{ textDecoration: "none" }}>
+                            <a key={index} href={item.link} style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer">
                                 <Box
                                     boxShadow={(t) => t.palette.boxShadow}
                                     p={2}
@@ -83,6 +83,7 @@ const Contact = () => {
                             </a>
                         ))}
                     </Box>
+
                 </Box>
 
                 <Box mt={{ xs: 3, md: 5 }} display="flex" justifyContent="center">

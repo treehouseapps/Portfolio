@@ -86,8 +86,8 @@ const Home = () => {
                                 sx={{ marginTop: 2 }}
                             >
                                 <img src="icons/vscodeblack.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
-                                <img src="icons/githubblack.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
-                                <img src="icons/vercelblack.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/githubblackhome.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
+                                <img src="icons/vercelblackhome.svg" style={{ filter: "var(--icon-filter)" }} alt="icon" width="40px" data-aos="fade-right" />
                             </Box>
                         </Box>
                     </Box>
