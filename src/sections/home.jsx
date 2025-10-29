@@ -17,7 +17,7 @@ const Home = () => {
     });
     return (
         <>
-            <Typography id="home" variant="h3" color="white" sx={{ visibility: 'hidden' }}>.</Typography>
+            <Typography id="home" variant="h3" color="white" sx={{ visibility: 'hidden' }}></Typography>
             <Box
                 id="home"
                 height="max-content"
