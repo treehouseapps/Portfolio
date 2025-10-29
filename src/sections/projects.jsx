@@ -54,7 +54,7 @@ const Projects = () => {
 
     return (
         <Box height='max-content'>
-            <Typography id='projects' variant="h3" sx={{ color: (t) => t.palette.text.primary }}>.</Typography>
+            <Typography id='projects' variant="h3" sx={{ visibility: 'hidden' }}>.</Typography>
             <Typography
                 variant="h3" mt={4}
                 fontFamily={'Quicksand'}

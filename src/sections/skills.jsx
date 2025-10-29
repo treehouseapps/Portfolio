@@ -15,7 +15,7 @@ const Skills = () => {
         <>
             {/* Skills Section */}
             <Box height="max-content">
-                <Typography id="skills" variant="h3" sx={{ color: (t) => t.palette.text.primary }}>.</Typography>
+                <Typography id="skills" variant="h3" sx={{ visibility: 'hidden' }}>.</Typography>
                 <Typography
                     variant="h4"
                     mt={4}

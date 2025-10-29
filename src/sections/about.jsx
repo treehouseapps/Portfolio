@@ -4,7 +4,7 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 const About = () => {
     return (
         <Box height="max-content" px={{ xs: 2, sm: 4 }}>
-            <Typography id="about" variant="h3" sx={{ color: (t) => t.palette.text.primary }}>.</Typography>
+            <Typography id="about" variant="h3" sx={{ visibility: 'hidden' }}>.</Typography>
             <Typography
                 variant="h4"
                 component="div"

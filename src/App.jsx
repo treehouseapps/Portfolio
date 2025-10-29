@@ -1,6 +1,5 @@
 import { Box, useTheme } from "@mui/material";
 import { useEffect } from "react";
-import ParticlesBackground from "./ParticlesBackground";
 import './style.css'
 
 import Navbar from "./sections/navbar";
@@ -21,12 +20,10 @@ function App() {
 
   return (
     <>
-      <ParticlesBackground />
       <Box sx={{
         fontFamily: 'Quicksand',
         height: 'max-content', display: 'flex',
         flexDirection: 'column', overflowX: 'hidden',
-        backgroundColor: (t) => t.palette.background.default
       }}>
         <Navbar />
         <Home />

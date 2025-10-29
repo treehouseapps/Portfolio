@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { ThemeProvider as MuiThemeProvider, createTheme, CssBaseline } from "@mui/material";
 
-const ColorModeContext = createContext({ mode: "light", toggle: () => { } });
+const ColorModeContext = createContext({ mode: "dark", toggle: () => { } });
 export const useColorMode = () => useContext(ColorModeContext);
 
 export default function ThemeProvider({ children }) {
