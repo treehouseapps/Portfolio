@@ -8,14 +8,20 @@ const Projects = () => {
 
     const projects = [
         {
+            id: 1, name: 'Auth NPM Module', img: './module.png',
+            desc: 'An easy-to-use NPM module providing login and register forms with full callback support, ready for integration.',
+            link: 'https://www.npmjs.com/package/treehouse-login',
+            github: 'https://github.com/treehouseapps/',
+            featured: true
+        },
+        {
             id: 1, name: 'Movie Explorer', img: './movie.png',
             desc: 'A responsive React web app for exploring and searching movies with detailed information, smooth navigation, and a clean, modern design.',
             link: 'https://movie-swart-gamma.vercel.app/',
             github: 'https://github.com/treehouseapps/movie',
-            featured: true
         },
         {
-            id: 2, name: 'Full Stack E-Commerce Web Application', img: './ecommerce.png',
+            id: 2, name: 'E-Commerce Web Application', img: './ecommerce.png',
             desc: 'A responsive E-Commerce app built with React and Material UI. Users can browse products, manage a cart, and checkout seamlessly. It features real-time updates, smooth navigation, and a clean, user-friendly design.',
             link: 'https://th-ecommerce.vercel.app/',
             github: 'https://github.com/treehouseapps/E-commerce',
