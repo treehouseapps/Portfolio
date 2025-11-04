@@ -1,21 +1,42 @@
+import emailjs from "emailjs-com";
 import { Typography, Box, TextField, Button } from "@mui/material";
 import { useState } from "react";
 
 const Contact = () => {
-    const [link, setLink] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSendEmail = () => {
+    const handleSubmit = () => {
         if (!name || !email || !message) {
             alert("Please fill in all fields before sending.");
             return;
         }
 
-        setLink(`https://mail.google.com/mail/?view=cm&fs=1&to=bbekijunior1@gmail.com&su=Greeting from ${name}&body=${encodeURIComponent(message)}%0D%0DFrom: ${encodeURIComponent(name)}`)
-    }
-
+        emailjs
+            .send(
+                "service_4x0xy29",   // Your Service ID
+                "template_5nx05p8",  // Your Template ID
+                {
+                    name: name,
+                    email: email,
+                    message: message,
+                    time: new Date().toLocaleString(), // optional
+                },
+                "27Rl0xvyqXbmc5Tnv"  // Your Public Key
+            )
+            .then(
+                () => {
+                    alert("✅ Feedback sent successfully!");
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                },
+                () => {
+                    alert("❌ Something went wrong. Please try again.");
+                }
+            );
+    };
 
     return (
         <Box height="max-content" p={2}>
@@ -83,7 +104,6 @@ const Contact = () => {
                             </a>
                         ))}
                     </Box>
-
                 </Box>
 
                 <Box mt={{ xs: 3, md: 5 }} display="flex" justifyContent="center">
@@ -110,50 +130,35 @@ const Contact = () => {
                             justifyContent="center"
                         >
                             <TextField
+                                name="name"
                                 fullWidth
                                 label="Name"
                                 variant="outlined"
                                 InputLabelProps={{ style: { color: (t) => t.palette.text.primary } }}
-                                InputProps={{
-                                    style: { color: (t) => t.palette.text.primary, borderColor: (t) => t.palette.text.primary },
-                                }}
+                                InputProps={{ style: { color: (t) => t.palette.text.primary } }}
                                 sx={{
                                     "& .MuiOutlinedInput-root": {
-                                        "& fieldset": {
-                                            borderColor: (t) => t.palette.text.primary,
-                                        },
-                                        "&:hover fieldset": {
-                                            borderColor: "#ccc",
-                                        },
-                                        "&.Mui-focused fieldset": {
-                                            borderColor: (t) => t.palette.text.primary,
-                                        },
+                                        "& fieldset": { borderColor: (t) => t.palette.text.primary },
+                                        "&:hover fieldset": { borderColor: "#ccc" },
+                                        "&.Mui-focused fieldset": { borderColor: (t) => t.palette.text.primary },
                                     },
                                 }}
                                 data-aos='zoom-in'
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-
                             />
                             <TextField
+                                name="email"
                                 fullWidth
                                 label="Email"
                                 variant="outlined"
                                 InputLabelProps={{ style: { color: (t) => t.palette.text.primary } }}
-                                InputProps={{
-                                    style: { color: (t) => t.palette.text.primary },
-                                }}
+                                InputProps={{ style: { color: (t) => t.palette.text.primary } }}
                                 sx={{
                                     "& .MuiOutlinedInput-root": {
-                                        "& fieldset": {
-                                            borderColor: (t) => t.palette.text.primary,
-                                        },
-                                        "&:hover fieldset": {
-                                            borderColor: "#ccc",
-                                        },
-                                        "&.Mui-focused fieldset": {
-                                            borderColor: (t) => t.palette.text.primary,
-                                        },
+                                        "& fieldset": { borderColor: (t) => t.palette.text.primary },
+                                        "&:hover fieldset": { borderColor: "#ccc" },
+                                        "&.Mui-focused fieldset": { borderColor: (t) => t.palette.text.primary },
                                     },
                                 }}
                                 data-aos='zoom-in'
@@ -166,53 +171,39 @@ const Contact = () => {
                             Message
                         </Typography>
                         <TextField
+                            name="message"
                             id="message"
                             multiline
                             rows={5}
                             fullWidth
                             placeholder="Write your message..."
                             variant="outlined"
-                            InputProps={{
-                                style: { color: (t) => t.palette.text.primary },
-                            }}
+                            InputProps={{ style: { color: (t) => t.palette.text.primary } }}
                             InputLabelProps={{ style: { color: (t) => t.palette.text.primary } }}
                             sx={{
                                 "& .MuiOutlinedInput-root": {
-                                    "& fieldset": {
-                                        borderColor: (t) => t.palette.text.primary,
-                                    },
-                                    "&:hover fieldset": {
-                                        borderColor: "#ccc",
-                                    },
-                                    "&.Mui-focused fieldset": {
-                                        borderColor: (t) => t.palette.text.primary,
-                                    },
+                                    "& fieldset": { borderColor: (t) => t.palette.text.primary },
+                                    "&:hover fieldset": { borderColor: "#ccc" },
+                                    "&.Mui-focused fieldset": { borderColor: (t) => t.palette.text.primary },
                                 },
                             }}
                             data-aos='zoom-in'
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         />
-                        <a href={name && message ? link : undefined}>
-                            <Button
-                                onClick={handleSendEmail}
-                                variant="outlined"
-                                sx={{
-                                    mt: 2,
-                                    color: (t) => t.palette.text.primary,
-                                    borderColor: (t) => t.palette.text.primary,
-                                    "&:hover": {
-                                        backgroundColor: "white",
-                                        color: "black",
-                                    },
-                                }}
-                            >
-                                Send Message
-                            </Button>
-                        </a>
+                        <Button
+                            onClick={handleSubmit}
+                            variant="outlined"
+                            sx={{
+                                mt: 2,
+                                color: (t) => t.palette.text.primary,
+                                borderColor: (t) => t.palette.text.primary,
+                                "&:hover": { backgroundColor: "white", color: "black" },
+                            }}
+                        >
+                            Send Message
+                        </Button>
                     </Box>
-
-
                 </Box>
             </Box>
         </Box>
