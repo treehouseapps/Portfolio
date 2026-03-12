@@ -198,7 +198,7 @@ const Projects = () => {
                                             '&:hover': {
                                                 borderColor: (t) => t.palette.primary.dark,
                                                 backgroundColor: (t) => t.palette.primary.main,
-                                                color: (t) => t.palette.background.paper,
+                                                color: '#ffffff',
                                             }
                                         }}
                                     >

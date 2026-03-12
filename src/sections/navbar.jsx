@@ -19,7 +19,7 @@ const Navbar = () => {
             setScrolled(window.scrollY > 10);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -57,7 +57,7 @@ const Navbar = () => {
                             flexGrow: 1,
                             fontFamily: '"Grechen Fuemen", serif',
                             fontWeight: 700,
-                            fontSize: '4rem',
+                            fontSize: '2rem',
                             fontStyle: 'normal',
                             color: theme.palette.text.primary,
                             marginRight: '2rem',
@@ -68,14 +68,17 @@ const Navbar = () => {
 
                     <Box sx={{
                         display: { xs: "none", md: "flex" },
-                        justifyContent: 'space-around',
-                        marginRight: '0rem', width: '60%',
+                        ml: "auto",
+                        mr: "5rem",
+                        justifyContent: "flex-end",
+                        gap: "0.75rem",
                     }}>
                         {navItems.map((item) => (
                             <Button key={item.text}
                                 data-aos="fade-down"
                                 data-aos-duration={item.id + '000'}
                                 sx={{
+                                    textTransform: "none",
                                     position: "relative",
                                     display: "inline-block",
                                     paddingBottom: '0',
@@ -136,7 +139,7 @@ const Navbar = () => {
                     gridTemplateColumns={'1fr'}>
                     {navItems.map((item) => (
                         <Button key={item.text}
-                            sx={{ color: theme.palette.text.primary }}
+                            sx={{ color: theme.palette.text.primary, textTransform: "none" }}
                             href={item.link}
                             onClick={handleDrawerToggle}>
 

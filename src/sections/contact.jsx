@@ -80,7 +80,6 @@ const Contact = () => {
                         ].map((item, index) => (
                             <a key={index} href={item.link} style={{ textDecoration: "none" }} target="_blank" rel="noopener noreferrer">
                                 <Box
-                                    boxShadow={(t) => t.palette.boxShadow}
                                     p={2}
                                     borderRadius={5}
                                     data-aos="zoom-in"
@@ -88,6 +87,7 @@ const Contact = () => {
                                     flexDirection="column"
                                     alignItems="center"
                                     sx={{
+                                        boxShadow: (t) => t.palette.boxShadow,
                                         transition: "all 0.3s ease-in-out",
                                         "&:hover": {
                                             transform: "scale(1.1)",

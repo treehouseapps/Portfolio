@@ -24,8 +24,10 @@ const Home = () => {
                 display="grid"
                 gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }} // Stack in xs, side by side in md
                 gap={3}
+                // mb={{ xs: 5, md: 10 }}
+                // border='1px solid red'
                 sx={{
-                    padding: { xs: "1rem", sm: "2rem", md: "2rem 5rem" },
+                    padding: { xs: "1rem", sm: "2rem", md: "0rem 5rem" },
                     textAlign: { xs: "center", md: "left" }, // Center text on small screens
                 }}
             >
@@ -93,11 +95,11 @@ const Home = () => {
                     </Box>
                 </div>
                 <div data-aos="fade-left">
-                    <Box display="flex" justifyContent="center">
-                        <img src="person.svg" alt="Person.svg" width="100%" style={{ maxWidth: "500px" }} />
+                    <Box display="flex" justifyContent="center" mt={{ xs: 5, md: 15 }}>
+                        <img src="person.svg" alt="Person.svg" width="65%" style={{ maxWidth: "500px" }} />
                     </Box>
                 </div>
-            </Box>
+            </Box >
         </>
     );
 };

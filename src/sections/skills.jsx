@@ -113,7 +113,7 @@ const Skills = () => {
                     p={{ xs: "0rem 1rem", sm: "0.5rem 5rem" }}
                     data-aos="zoom-out"
                     fontStyle="italic"
-                    color="#6C757D"
+                    color="#fff"
                     fontSize={{ xs: "16px", sm: "20px" }}
                     mx={{ xs: "1rem", sm: "10rem" }}
                     textAlign="center"
