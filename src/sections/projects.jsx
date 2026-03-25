@@ -1,298 +1,269 @@
-import { Typography, Button, Box, useMediaQuery } from "@mui/material";
-import WebIcon from '@mui/icons-material/Web';
-import GitHubIcon from '@mui/icons-material/GitHub';
-
+import { Typography, Button, Box } from "@mui/material";
+import WebIcon from "@mui/icons-material/Web";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import CodeIcon from "@mui/icons-material/Code";
+import JavascriptIcon from "@mui/icons-material/Javascript";
+import HtmlIcon from "@mui/icons-material/Html";
+import CssIcon from "@mui/icons-material/Css";
+import ReactIcon from "@mui/icons-material/Code";
 const Projects = () => {
-    const isSmallScreen = useMediaQuery('(max-width:600px)');
-    const isMediumScreen = useMediaQuery('(max-width:960px)');
-
     const projects = [
         {
-            id: 1, name: 'Auth NPM Module', img: './module.png',
+            id: 1,
+            name: 'TH-Auth',
+            subName: 'Auth NPM Module',
+            img: './module.png',
             desc: 'An easy-to-use NPM module providing login and register forms with full callback support, ready for integration.',
+            about: [
+                'User authentication and login management',
+                'Secure session handling',
+                'Easy integration for web applications'
+            ],
             link: 'https://www.npmjs.com/package/treehouse-login',
             github: 'https://github.com/treehouseapps/',
-            featured: true
         },
         {
-            id: 2, name: 'Movie Explorer', img: './movie.png',
-            desc: 'A responsive React web app for exploring and searching movies with detailed information, smooth navigation, and a clean, modern design.',
+            id: 2,
+            name: 'Random Movies',
+            subName: 'Movie Explorer',
+            img: './movie.png',
+            desc: 'A responsive React web app for exploring and searching movies with detailed information.',
+            about: [
+                'Browse and search movies',
+                'View detailed movie information',
+                'Responsive and intuitive interface'
+            ],
             link: 'https://movie-swart-gamma.vercel.app/',
             github: 'https://github.com/treehouseapps/movie',
         },
         {
-            id: 3, name: 'E-Commerce Web Application', img: './ecommerce.png',
-            desc: 'A responsive E-Commerce app built with React and Material UI. Users can browse products, manage a cart, and checkout seamlessly. It features real-time updates, smooth navigation, and a clean, user-friendly design.',
+            id: 3,
+            name: 'Shopify',
+            subName: 'E-Commerce Web Application',
+            img: './ecommerce.png',
+            desc: 'A responsive E-Commerce app with cart, checkout, and modern UI.',
+            about: [
+                'Full shopping cart and checkout',
+                'Product listing and search',
+                'Modern, responsive user interface'
+            ],
             link: 'https://th-ecommerce.vercel.app/',
             github: 'https://github.com/treehouseapps/E-commerce',
         },
         {
-            id: 4, name: 'Online Bus Ticket Booking System', img: './bus.png',
-            desc: 'An online bus ticket booking system for searching routes, booking seats, and managing reservations. It includes a secure admin dashboard for handling buses, routes, users, and feedback — all built for a smooth, user-friendly experience.',
+            id: 4,
+            name: 'Kelal Guzo',
+            subName: 'Bus Ticket Booking System',
+            img: './bus.png',
+            desc: 'A full booking system with admin dashboard and reservation management.',
+            about: [
+                'Ticket booking and reservation management',
+                'Admin dashboard with controls',
+                'Real-time availability and updates'
+            ],
             link: 'https://th-bus-booking.vercel.app/',
             github: 'https://github.com/treehouseapps/Bus-booking'
         },
         {
-            id: 5, name: 'URL Shortener', img: './ttrim.png',
-            desc: 'A simple and efficient URL shortener that converts long links into short, shareable URLs. It ensures quick redirection, easy tracking, and a clean user experience.',
+            id: 5,
+            name: 'TH-Trim',
+            subName: 'URL Shortener',
+            img: './ttrim.png',
+            desc: 'A fast and simple URL shortener with tracking features.',
+            about: [
+                'Shorten URLs quickly',
+                'Track click statistics',
+                'Simple and fast interface'
+            ],
             link: 'https://ttrim.vercel.app',
             github: 'https://github.com/treehouseapps/shortner'
         },
         {
-            id: 6, name: 'Employee Management System', img: './employee.png',
-            desc: 'A simple web app for managing employee records efficiently. It allows adding, viewing, updating, and deleting employee data with a clean and user-friendly interface.',
+            id: 6,
+            name: 'TH-Emp',
+            subName: 'Employee Management System',
+            img: './employee.png',
+            desc: 'Manage employee records with CRUD operations in a clean UI.',
+            about: [
+                'Add, edit, delete employee records',
+                'Search and filter employee data',
+                'Clean and organized dashboard'
+            ],
             link: 'https://th-employee-management-system.vercel.app/',
             github: 'https://github.com/treehouseapps/Employee-Management-System'
         },
         {
-            id: 7, name: 'Weather App', img: './weather.png',
-            desc: 'A simple weather app built with React that lets users search for the current weather by city name.The app is responsive and provides a smooth user experience across devices.',
+            id: 7,
+            name: 'TH-Weather',
+            subName: 'Weather App',
+            img: './weather.png',
+            desc: 'Search real-time weather by city with a responsive interface.',
+            about: [
+                'Search weather by city',
+                'View real-time weather data',
+                'Responsive and clean UI'
+            ],
             link: 'https://th-weather-app.vercel.app/',
             github: 'https://github.com/treehouseapps/weather_app'
         },
         {
-            id: 8, name: 'Notebook App', img: './note.png',
-            desc: 'A simple and organized web app for creating, editing, and managing notes. It offers a clean interface for easy note-taking and retrieval.',
+            id: 8,
+            name: 'Wall-Note',
+            subName: 'Notebook App',
+            img: './note.png',
+            desc: 'Create and manage notes with a clean and minimal interface.',
+            about: [
+                'Create, edit, delete notes',
+                'Organize notes efficiently',
+                'Minimal and user-friendly interface'
+            ],
             link: 'https://wallnote-frontend.vercel.app/',
             github: 'https://github.com/treehouseapps/wallnote-frontend'
         },
         {
-            id: 9, name: 'Authentication System', img: './auth.png',
-            desc: 'A secure and user-friendly login and registration system for seamless access control. It ensures smooth user authentication and data protection.',
+            id: 9,
+            name: 'TH-Login',
+            subName: 'Authentication System',
+            img: './auth.png',
+            desc: 'Secure login/register system with authentication handling.',
+            about: [
+                'Secure login and registration',
+                'Handle authentication and sessions',
+                'Ready for integration into apps'
+            ],
             link: 'https://secure-user-frontend.vercel.app/',
             github: 'https://github.com/treehouseapps/PRODIGY_FS_01'
         }
     ];
-
+    const items = [
+        { label: "JavaScript", Icon: JavascriptIcon },
+        { label: "HTML", Icon: HtmlIcon },
+        { label: "CSS", Icon: CssIcon },
+        { label: "React", Icon: ReactIcon },
+        { label: "GitHub", Icon: GitHubIcon },
+    ];
     return (
-        <Box height='max-content'>
-            <Typography id='projects' variant="h3" sx={{ visibility: 'hidden' }}></Typography>
+        <Box id="projects" px={{ xs: 2, md: 8 }} py={10}>
+
             <Typography
-                variant="h3" mt={4}
-                fontFamily={'Quicksand'}
-                fontWeight='900'
-                width='100%'
-                p={2} align="center"
-                data-aos="fade-right"
-                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}>
-                My Recent Projects
+                textAlign="center"
+                variant="h4"
+                fontWeight="900"
+                fontFamily="Quicksand"
+                sx={{
+                    background: "linear-gradient(90deg, #4FACFE, #00F2FE)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    mb: 8,
+                }}
+            >
+                My Projects
             </Typography>
 
-            {/* Featured Project */}
-            {projects.filter(project => project.featured).map((featuredProject) => (
-                <Box
-                    key={featuredProject.id}
-                    sx={{
-                        maxWidth: '1000px',
-                        margin: '0 auto 4rem auto',
-                        padding: { xs: 2, md: 4 },
-                    }}
-                >
-                    <Typography
-                        variant="h4"
-                        fontFamily="Quicksand"
-                        fontWeight="700"
-                        textAlign="center"
-                        mb={1}
-                        sx={{ color: (t) => t.palette.text.primary }}
-                        data-aos="fade-down"
-                    >
-                        Spotlight ✨
-                    </Typography>
+            <Box display="flex" flexDirection="column" gap={10}>
+                {projects.map((project, index) => {
+                    const isReverse = index % 2 !== 0;
 
-                    <Box
-                        sx={{
-                            backgroundColor: (t) => t.palette.background.paper,
-                            borderRadius: 4,
-                            boxShadow: 6,
-                            overflow: 'hidden',
-                            transition: 'all 0.3s ease-in-out',
-                            '&:hover': {
-                                transform: 'translateY(-8px)',
-                                boxShadow: 12,
-                            }
-                        }}
-                        data-aos="zoom-in"
-                    >
+                    return (
                         <Box
+                            key={project.id}
                             display="grid"
                             gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
-                            gap={3}
+                            gap={4}
                             alignItems="center"
                         >
-                            {/* Project Image */}
+
                             <Box
                                 sx={{
-                                    position: 'relative',
-                                    overflow: 'hidden',
-                                    height: { xs: '250px', md: '350px' },
-                                    backgroundColor: (t) => t.palette.action.hover,
+                                    order: { xs: 1, md: isReverse ? 2 : 1 },
+                                    flex: 1, // take equal width
+                                    borderRadius: "12px",
+                                    overflow: "hidden",
                                 }}
                             >
                                 <img
-                                    src={featuredProject.img}
-                                    alt={featuredProject.name}
+                                    src={project.img}
+                                    alt={project.name}
                                     style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        objectPosition: 'center',
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover", // ensures full coverage
                                     }}
                                 />
                             </Box>
 
-                            {/* Project Details */}
-                            <Box p={3}>
-                                <Typography
-                                    variant="h4"
-                                    fontFamily="Quicksand"
-                                    fontWeight="700"
-                                    mb={2}
-                                    sx={{ color: (t) => t.palette.text.primary }}
-                                >
-                                    {featuredProject.name}
+                            <Box
+                                sx={{
+                                    order: { xs: 2, md: isReverse ? 1 : 2 },
+                                    flex: 1, // equal width with image box
+                                    p: { xs: 3, md: 5 },
+                                    borderRadius: "10px",
+                                    backgroundColor: "rgba(255,255,255,0.06)",
+                                    backdropFilter: "blur(10px)",
+                                    WebkitBackdropFilter: "blur(10px)",
+                                }}
+                            >
+                                <Typography variant="h4" fontWeight="800" mb={1}>
+                                    {project.name}
                                 </Typography>
-
-                                <Typography
-                                    variant="body1"
-                                    fontFamily="Quicksand"
-                                    mb={3}
-                                    sx={{
-                                        color: (t) => t.palette.text.secondary,
-                                        lineHeight: 1.7,
-                                        fontSize: '1.1rem'
-                                    }}
-                                >
-                                    {featuredProject.desc}
+                                <Typography fontWeight="800" fontFamily={'Quicksand'} mb={1}>
+                                    {project.subName}
                                 </Typography>
-
                                 <Box
-                                    display="flex"
-                                    gap={2}
-                                    flexWrap="wrap"
-                                    justifyContent={{ xs: "center", md: "flex-start" }}
+                                    sx={{
+                                        width: 100,
+                                        height: 3,
+                                        background: 'linear-gradient(90deg, #4FACFE, #00F2FE)',
+                                        borderRadius: 2,
+                                        my: 2,
+                                    }}
+                                />
+                                <Typography
+                                    sx={{ color: "rgba(255,255,255,0.8)", mb: 3, lineHeight: 1.7 }}
                                 >
+                                    {project.desc}
+                                </Typography>
+
+                                <Box display="grid" alignItems="center" gap={1} mb={1}>
+                                    {project.about.map((item, index) => (
+                                        <Box display="flex" gap={1} key={index}>
+                                            <Typography sx={{ color: "rgba(79,172,254,0.6)", fontWeight: "bold" }}>
+                                                <CodeIcon />
+                                            </Typography>
+                                            <Typography sx={{ color: "rgba(255,255,255,0.85)" }} fontSize="small">
+                                                {item}
+                                            </Typography>
+                                        </Box>
+                                    ))}
+                                </Box>
+
+                                <Box display="flex" mt={2} gap={2} flexWrap="wrap">
                                     <Button
                                         variant="contained"
-                                        size="large"
-                                        href={featuredProject.github}
+                                        href={project.link}
                                         target="_blank"
-                                        sx={{
-                                            backgroundColor: (t) => t.palette.primary.main,
-                                            '&:hover': {
-                                                backgroundColor: (t) => t.palette.primary.dark,
-                                            }
-                                        }}
+                                        sx={{ borderRadius: "10px" }}
                                     >
-                                        <GitHubIcon sx={{ mr: 1 }} />
-                                        View Code
+                                        <WebIcon sx={{ mr: 1 }} />
+                                        Live
                                     </Button>
                                     <Button
                                         variant="outlined"
-                                        size="large"
-                                        href={featuredProject.link}
+                                        href={project.github}
                                         target="_blank"
-                                        sx={{
-                                            borderColor: (t) => t.palette.primary.main,
-                                            color: (t) => t.palette.primary.main,
-                                            '&:hover': {
-                                                borderColor: (t) => t.palette.primary.dark,
-                                                backgroundColor: (t) => t.palette.primary.main,
-                                                color: '#ffffff',
-                                            }
-                                        }}
+                                        sx={{ borderRadius: "999px" }}
                                     >
-                                        <WebIcon sx={{ mr: 1 }} />
-                                        Live Demo
+                                        <GitHubIcon sx={{ mr: 1 }} />
+                                        Code
                                     </Button>
                                 </Box>
                             </Box>
                         </Box>
-                    </Box>
-                </Box>
-            ))}
-
-            <Box display='flex' alignItems='center' justifyContent='center'>
-
-                <Box display='grid'
-                    gridTemplateColumns={isSmallScreen ? '1fr' : isMediumScreen ? '1fr 1fr' : '1fr 1fr 1fr'}
-                    gap={5}
-                    p={isSmallScreen ? 2 : 8}
-                >
-                    {projects.filter(project => !project.featured).map((item) => (
-                        <Box
-                            key={item.id}
-                            p={3}
-                            boxShadow={(t) => t.palette.boxShadow}
-                            backgroundColor={(t) => t.palette.background.paper}
-                            zIndex={1}
-                            borderRadius={3}
-                            display="flex"
-                            flexDirection="column"
-                            justifyContent="center"
-                            alignItems="center"
-                            sx={{
-                                maxWidth: isSmallScreen ? '100%' : '18rem',
-                                margin: 'auto',
-                                transition: 'all 0.5s ease-in-out',
-                                '&:hover': {
-                                    transform: 'scale(1.05)',
-                                    boxShadow: '0px 8px 20px #333',
-                                    cursor: 'pointer',
-                                }
-                            }}
-                        >
-                            <img
-                                src={item.img}
-                                data-aos="zoom-in"
-                                alt=""
-                                style={{
-                                    border: '1px solid',
-                                    borderRadius: '5px',
-                                    width: '100%',
-                                    marginBottom: '1rem',
-                                }}
-                            />
-                            <Typography
-                                variant="h5"
-                                data-aos="fade-in"
-                                fontFamily='Quicksand'
-                                fontWeight='bolder'
-                                textAlign='center'
-                            >{item.name}</Typography>
-                            <Typography
-                                fontFamily='Quicksand'
-                                data-aos='zoom-out'
-                                textAlign='center'
-                            >{item.desc}</Typography>
-                            <Box display='inline-flex' m={1}
-                                justifyContent='space-around'
-                                gap={4}
-                                flexWrap='wrap'
-                            >
-                                <a href={item.github} data-aos="zoom-in">
-                                    <Button variant="outlined">
-                                        <Typography
-                                            fontFamily='Quicksand'
-                                            display='inline-flex' alignItems='center' gap={1}
-                                        ><GitHubIcon />Github </Typography>
-                                    </Button>
-                                </a>
-                                <a href={item.link} data-aos="zoom-in">
-                                    <Button variant="outlined">
-                                        <Typography
-                                            fontFamily='Quicksand'
-                                            display='inline-flex' alignItems='center' gap={1}
-                                        ><WebIcon /> Demo </Typography>
-                                    </Button>
-                                </a>
-                            </Box>
-                        </Box>
-                    ))}
-                </Box>
+                    );
+                })}
             </Box>
-        </Box>
+        </Box >
     );
-}
+};
 
 export default Projects;

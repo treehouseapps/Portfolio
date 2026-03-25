@@ -1,6 +1,7 @@
 import { Box, useTheme } from "@mui/material";
 import { useEffect } from "react";
-import './style.css'
+// import './style.css'
+import ParticlesBackground from "./components/ParticlesBackground";
 
 import Navbar from "./sections/navbar";
 import Home from "./sections/home";
@@ -12,18 +13,23 @@ import Footer from "./sections/footer";
 
 function App() {
 
-  useEffect(() => {
-    // Initialize AOS when the component mounts
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+  // useEffect(() => {
+  //   // Initialize AOS when the component mounts
+  //   AOS.init({ duration: 1000, once: true });
+  // }, []);
 
 
   return (
     <>
+      <ParticlesBackground />
+
       <Box sx={{
         fontFamily: 'Quicksand',
         height: 'max-content', display: 'flex',
         flexDirection: 'column', overflowX: 'hidden',
+        position: "relative",
+        zIndex: 1,
+        backgroundColor: 'transparent',
       }}>
         <Navbar />
         <Home />

@@ -39,18 +39,18 @@ const Contact = () => {
     };
 
     return (
-        <Box height="max-content" p={2}>
+        <Box height="max-content" p={2} id="contact">
             <Typography
-                id="contact"
-                variant="h3"
-                mt={4}
+                variant="h4"
+                textAlign="center"
+                fontWeight={900}
                 fontFamily="Quicksand"
-                fontWeight="900"
-                width="100%"
-                p={2}
-                align="center"
-                data-aos="fade-right"
-                sx={{ boxShadow: 2, fontSize: { xs: "24px", sm: "32px" }, color: (t) => t.palette.text.primary }}
+                sx={{
+                    background: "linear-gradient(90deg, #4FACFE, #00F2FE)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    mt: 7,
+                }}
             >
                 Find Me On
             </Typography>
