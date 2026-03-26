@@ -53,7 +53,7 @@ const About = () => {
                 fontStyle="italic"
                 sx={{ color: (t) => t.palette.text.secondary }}
                 fontSize={{ xs: "16px", sm: "20px" }}
-                mx={{ xs: "0", sm: "5rem" }}
+                mx={{ xs: 0, md: "5rem" }}
                 textAlign="center">
                 <Typography
                     fontWeight={600}
@@ -75,13 +75,14 @@ const About = () => {
                 }}
             >
 
-                <Box item xs={12} md={6} padding={5}>
+                <Box item xs={12} md={6} padding={{ xs: 0, sm: 2, md: 5 }}>
                     <Box
                         sx={{
-                            width: 380,
+                            width: "100%",
+                            maxWidth: 380,
                             bgcolor: '#121212',
                             borderRadius: 6,
-                            p: 4,
+                            p: { xs: 2.5, sm: 4 },
                             border: '1px solid rgba(255, 255, 255, 0.1)',
                             display: 'flex',
                             flexDirection: 'column',

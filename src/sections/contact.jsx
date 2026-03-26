@@ -63,7 +63,7 @@ const Contact = () => {
                 alignItems="center"
             >
                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-                    <Box m={4} p={4} textAlign="center">
+                    <Box m={{ xs: 1, sm: 4 }} p={{ xs: 1.5, sm: 4 }} textAlign="center">
                         <Typography variant="h4" fontFamily="Quicksand" fontWeight="bolder">
                             Get In Touch
                         </Typography>
@@ -96,7 +96,12 @@ const Contact = () => {
                                         },
                                     }}
                                 >
-                                    <img src={item.img} alt={item.label} width="80" />
+                                    <Box
+                                        component="img"
+                                        src={item.img}
+                                        alt={item.label}
+                                        sx={{ width: { xs: 64, sm: 80 }, height: "auto" }}
+                                    />
                                     <Typography fontFamily="Quicksand" sx={{ color: (t) => t.palette.text.primary }}>
                                         {item.label}
                                     </Typography>
@@ -116,6 +121,7 @@ const Contact = () => {
                             p: 4,
                             borderRadius: 2,
                             maxWidth: 600,
+                            width: "100%",
                             mx: "auto",
                             boxShadow: 3,
                             color: "white",

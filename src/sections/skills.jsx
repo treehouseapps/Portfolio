@@ -71,10 +71,10 @@ const Skills = () => {
 
             < Typography
                 mt={2}
-                mx={{ xs: 2, sm: 10, md: 20 }}
+                sx={{ maxWidth: 900, mx: "auto", px: { xs: 1, sm: 2 } }}
                 textAlign="center"
                 fontStyle="italic"
-                sx={{ color: (t) => t.palette.text.secondary }}
+                color={(t) => t.palette.text.secondary}
             >
                 Using modern technologies and reliable tools, I build scalable, performant applications.
             </Typography >

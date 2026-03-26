@@ -46,12 +46,13 @@ const Navbar = () => {
                 boxShadow: 'none',
                 backgroundColor: 'transparent',
                 backgroundImage: 'none',
-                mt: '1rem'
+                mt: { xs: '0.25rem', sm: '0.75rem', md: '1rem' }
             }}>
                 <Toolbar sx={{
                     border: 'none',
-                    padding: '1rem 2rem',
-                    margin: '0 1rem',
+                    px: { xs: 1.25, sm: 2, md: 3 },
+                    py: { xs: 1, sm: 1.25 },
+                    margin: { xs: '0 0.5rem', sm: '0 1rem' },
                     color: theme.palette.text.primary,
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -63,10 +64,10 @@ const Navbar = () => {
                             flexGrow: 1,
                             fontFamily: '"Grechen Fuemen", serif',
                             fontWeight: 700,
-                            fontSize: '2rem',
+                            fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
                             fontStyle: 'normal',
                             color: "whitesmoke",
-                            marginRight: '2rem',
+                            marginRight: { xs: '0.75rem', sm: '1.25rem', md: '2rem' },
                         }}>
                             Beki Jr
                         </Typography>

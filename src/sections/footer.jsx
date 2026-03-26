@@ -11,11 +11,16 @@ const Footer = () => {
             }}
         >
             <Typography component="div" sx={{ color: (t) => t.palette.text.secondary }}>
-                <Box display={'inline-flex'} justifyContent={'space-between'}>
-                    <Box>
-                        Developed by Bereket Tsegaye .
-                    </Box>
-                    <Box>  © {new Date().getFullYear()} All rights reserved.</Box>
+                <Box
+                    display="flex"
+                    flexDirection={{ xs: "column", sm: "row" }}
+                    alignItems="center"
+                    justifyContent={{ xs: "center", sm: "space-between" }}
+                    gap={{ xs: 0.75, sm: 2 }}
+                    sx={{ width: "100%", maxWidth: 980, mx: "auto" }}
+                >
+                    <Box>Developed by Bereket Tsegaye.</Box>
+                    <Box>© {new Date().getFullYear()} All rights reserved.</Box>
                 </Box>
             </Typography>
         </Box>

@@ -29,38 +29,33 @@ const Home = () => {
     return (
         <>
             <Box>
-                <Typography id="home" variant="h3" color="white" sx={{ visibility: 'hidden' }}></Typography>
+                <Typography id="home" variant="h3" sx={{ visibility: "hidden" }} />
 
                 <Box
                     sx={{
-                        display: { xs: "none", md: "flex" },
+                        display: "flex",
                         position: "relative",
-                        left: "50%",
-                        transform: "translateX(-50%)",
+                        mx: "auto",
                         px: 2,
                         py: 0.75,
-                        mt: "7rem",
+                        mt: { xs: "3rem", md: "7rem" },
                         maxWidth: "fit-content",
                         borderRadius: "999px",
                         color: "white",
                         overflow: "hidden",
                         zIndex: 1,
-
-                        // inner content style
                         alignItems: "center",
                         gap: 1,
-
                         backgroundColor: "rgba(255,255,255,0.06)",
                         backdropFilter: "blur(10px)",
                         WebkitBackdropFilter: "blur(10px)",
 
-                        // 🔥 animated border
                         "&::before": {
                             content: '""',
                             position: "absolute",
                             inset: 0,
                             borderRadius: "999px",
-                            padding: "1px", // thickness of border
+                            padding: "1px",
                             background:
                                 "linear-gradient(270deg, #4FACFE, #00F2FE, #4FACFE)",
                             backgroundSize: "400% 400%",
@@ -79,131 +74,145 @@ const Home = () => {
                 >
                     Available for Work
                 </Box>
+
                 <Box
                     id="home"
-                    height="max-content"
                     display="grid"
-                    gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }} // Stack in xs, side by side in md
-                    gap={3}
+                    gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
+                    gap={{ xs: 2, md: 3 }}
                     sx={{
-                        padding: { xs: "1rem", sm: "2rem", md: "0rem 5rem" },
-                        textAlign: { xs: "center", md: "left" }, // Center text on small screens
+                        px: { xs: 2, sm: 4, md: 8 },
+                        py: { xs: 3, md: 6 },
+                        textAlign: { xs: "center", md: "left" },
                     }}
                 >
-
                     <div data-aos="fade-right">
-                        <Box>
-                            <Box
-                                p={{ xs: 2, sm: 5 }}
-                                display="flex"
-                                flexDirection="column"
-                                alignItems={{ xs: "center", md: "flex-start" }}
-                                justifyContent="center"
-                                sx={{ color: (t) => t.palette.text.primary }}
+                        <Box
+                            display="flex"
+                            flexDirection="column"
+                            alignItems={{ xs: "center", md: "flex-start" }}
+                            justifyContent="center"
+                            sx={{ color: (t) => t.palette.text.primary }}
+                        >
+                            <Typography
+                                fontFamily="Quicksand"
+                                fontWeight={500}
+                                sx={{
+                                    fontSize: { xs: "20px", sm: "28px", md: "36px" },
+                                    mb: 1,
+                                }}
                             >
-                                <Typography
-                                    fontFamily="Quicksand"
-                                    fontWeight={500}
+                                Hi There!
+                            </Typography>
+
+                            <Typography
+                                fontFamily="Quicksand"
+                                fontWeight={500}
+                                sx={{
+                                    fontSize: { xs: "28px", sm: "40px", md: "50px" },
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    justifyContent: { xs: "center", md: "flex-start" },
+                                    alignItems: "center",
+                                }}
+                            >
+                                I'm
+                                <Box
+                                    component="span"
                                     sx={{
-                                        fontSize: { xs: "24px", sm: "40px" },
-                                        padding: { xs: "0.5rem", sm: "1rem" },
+                                        ml: 1,
+                                        fontWeight: "bold",
+                                        background:
+                                            "linear-gradient(90deg, #4FACFE, #00F2FE)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent",
                                     }}
                                 >
-                                    Hi There!
-                                </Typography>
-                                <Typography
-                                    fontFamily="Quicksand"
-                                    fontSize={{ xs: "32px", sm: "50px" }}
-                                    display="inline-flex"
-                                    alignItems="center"
-                                    fontWeight={500}
-                                >
-                                    I'm
-                                    <span
-                                        style={{
-                                            fontSize: "inherit",
-                                            fontWeight: "bolder",
-                                            marginLeft: "8px",
-                                            fontFamily: "Quicksand",
-                                            background: "linear-gradient(90deg, #4FACFE, #00F2FE)",
-                                            WebkitBackgroundClip: "text",
-                                            WebkitTextFillColor: "transparent",
-                                        }}
-                                    >
-                                        Bereket Tsegaye
-                                    </span>
-                                </Typography>
-                                <Typography
-                                    fontFamily="Quicksand"
-                                    fontSize={{ xs: "20px", sm: "30px" }}
-                                    mt={3}
-                                    mb={3}
-                                    fontWeight={500}
-                                >
-                                    {text}
-                                    <Cursor cursorColor={theme.palette.text.primary} />
-                                </Typography>
-                                <Box
-                                    display="flex"
-                                    justifyContent={{ xs: "center", md: "flex-start" }}
-                                    gap={2}
-                                    sx={{ marginTop: 2 }}
-                                >
-                                    <Grid container spacing={1.25} sx={{ maxWidth: 520 }}>
-                                        {quickLinks.map((item) => (
-                                            <Grid key={item.label} item xs={6} md={3}>
-                                                <Box
-                                                    component={Link}
-                                                    href={item.href}
-                                                    underline="none"
-                                                    color={theme.palette.text.secondary}
-                                                    borderColor={theme.palette.text.secondary}
-                                                    sx={{
-                                                        display: "inline-flex",
-                                                        width: "100%",
-                                                        alignItems: "center",
-                                                        justifyContent: "center",
-                                                        gap: 1,
-                                                        py: 1,
-                                                        px: 1.25,
-                                                        borderRadius: "999px",
-                                                        border: "1px solid",
-                                                        backgroundColor: "background.paper",
-                                                        backdropFilter: "blur(10px)",
-                                                        WebkitBackdropFilter: "blur(10px)",
-                                                        transition: "transform 150ms ease, background-color 150ms ease",
-                                                        "&:hover": {
-                                                            transform: "translateY(-1px)",
-                                                            backgroundColor: "action.hover",
-                                                        },
-                                                    }}
-                                                >
-                                                    <item.Icon sx={{ fontSize: 18 }} />
-                                                    <Typography
-                                                        component="span"
-                                                        sx={{
-                                                            fontFamily: "Quicksand",
-                                                            fontWeight: 700,
-                                                            fontSize: 14,
-                                                            letterSpacing: 0.2,
-                                                        }}
-                                                    >
-                                                        {item.label}
-                                                    </Typography>
-                                                </Box>
-                                            </Grid>
-                                        ))}
-                                    </Grid>
+                                    Bereket Tsegaye
                                 </Box>
-                            </Box>
-                        </Box>
-                    </div >
-                    <div data-aos="fade-left">
-                        <Box display="flex" justifyContent="center">
-                            <img src="person.svg" alt="Person.svg" width="65%" style={{ maxWidth: "500px" }} />
+                            </Typography>
+
+                            <Typography
+                                fontFamily="Quicksand"
+                                fontWeight={500}
+                                sx={{
+                                    fontSize: { xs: "18px", sm: "22px", md: "28px" },
+                                    mt: 2,
+                                    mb: 3,
+                                }}
+                            >
+                                {text}
+                                <Cursor cursorColor={theme.palette.text.primary} />
+                            </Typography>
+
+                            <Grid
+                                container
+                                spacing={1.5}
+                                sx={{
+                                    maxWidth: { xs: "100%", sm: 520 },
+                                    justifyContent: { xs: "center", md: "flex-start" },
+                                }}
+                            >
+                                {quickLinks.map((item) => (
+                                    <Grid key={item.label} item xs={6} sm={4} md={3}>
+                                        <Box
+                                            component={Link}
+                                            href={item.href}
+                                            underline="none"
+                                            sx={{
+                                                display: "flex",
+                                                width: "100%",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                gap: 1,
+                                                py: 1,
+                                                px: 1.25,
+                                                borderRadius: "999px",
+                                                border: "1px solid",
+                                                color: "text.secondary",
+                                                borderColor: "text.secondary",
+                                                backgroundColor: "background.paper",
+                                                backdropFilter: "blur(10px)",
+                                                transition:
+                                                    "transform 150ms ease, background-color 150ms ease",
+                                                "&:hover": {
+                                                    transform: "translateY(-2px)",
+                                                    backgroundColor: "action.hover",
+                                                },
+                                            }}
+                                        >
+                                            <item.Icon sx={{ fontSize: 18 }} />
+                                            <Typography
+                                                component="span"
+                                                sx={{
+                                                    fontFamily: "Quicksand",
+                                                    fontWeight: 700,
+                                                    fontSize: 13,
+                                                }}
+                                            >
+                                                {item.label}
+                                            </Typography>
+                                        </Box>
+                                    </Grid>
+                                ))}
+                            </Grid>
                         </Box>
                     </div>
-                </Box >
+
+                    <div data-aos="fade-left">
+                        <Box display="flex" justifyContent="center">
+                            <Box
+                                component="img"
+                                src="person.svg"
+                                alt="Person"
+                                sx={{
+                                    width: { xs: "80%", sm: "60%", md: "100%" },
+                                    maxWidth: "500px",
+                                }}
+                            />
+                        </Box>
+                    </div>
+                </Box>
             </Box>
         </>
     );
