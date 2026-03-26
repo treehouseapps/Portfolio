@@ -10,17 +10,17 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            name: 'TH-Auth',
-            subName: 'Auth NPM Module',
-            img: './module.png',
-            desc: 'An easy-to-use NPM module providing login and register forms with full callback support, ready for integration.',
+            name: 'Sami Rental System',
+            subName: 'Car Rental System',
+            img: './carrent.png',
+            desc: 'A full-stack car rental platform with role-based access, enabling users to book vehicles, admins to manage operations, and super admins to oversee analytics and system control.',
             about: [
-                'User authentication and login management',
-                'Secure session handling',
-                'Easy integration for web applications'
+                'Role-based system with User, Admin, and Super Admin dashboards',
+                'End-to-end reservation system with document upload and PDF generation',
+                'Advanced admin analytics with automated background job processing'
             ],
-            link: 'https://www.npmjs.com/package/treehouse-login',
-            github: 'https://github.com/treehouseapps/',
+            link: 'https://github.com/treehouseapps/car-rental-v2',
+            github: 'https://github.com/treehouseapps/car-rental-v2'
         },
         {
             id: 2,
@@ -38,48 +38,20 @@ const Projects = () => {
         },
         {
             id: 3,
-            name: 'Shopify',
-            subName: 'E-Commerce Web Application',
-            img: './ecommerce.png',
-            desc: 'A responsive E-Commerce app with cart, checkout, and modern UI.',
+            name: 'TH-Auth',
+            subName: 'Auth NPM Module',
+            img: './module.png',
+            desc: 'An easy-to-use NPM module providing login and register forms with full callback support, ready for integration.',
             about: [
-                'Full shopping cart and checkout',
-                'Product listing and search',
-                'Modern, responsive user interface'
+                'User authentication and login management',
+                'Secure session handling',
+                'Easy integration for web applications'
             ],
-            link: 'https://th-ecommerce.vercel.app/',
-            github: 'https://github.com/treehouseapps/E-commerce',
+            link: 'https://www.npmjs.com/package/treehouse-login',
+            github: 'https://github.com/treehouseapps/',
         },
         {
             id: 4,
-            name: 'Kelal Guzo',
-            subName: 'Bus Ticket Booking System',
-            img: './bus.png',
-            desc: 'A full booking system with admin dashboard and reservation management.',
-            about: [
-                'Ticket booking and reservation management',
-                'Admin dashboard with controls',
-                'Real-time availability and updates'
-            ],
-            link: 'https://th-bus-booking.vercel.app/',
-            github: 'https://github.com/treehouseapps/Bus-booking'
-        },
-        {
-            id: 5,
-            name: 'TH-Trim',
-            subName: 'URL Shortener',
-            img: './ttrim.png',
-            desc: 'A fast and simple URL shortener with tracking features.',
-            about: [
-                'Shorten URLs quickly',
-                'Track click statistics',
-                'Simple and fast interface'
-            ],
-            link: 'https://ttrim.vercel.app',
-            github: 'https://github.com/treehouseapps/shortner'
-        },
-        {
-            id: 6,
             name: 'TH-Emp',
             subName: 'Employee Management System',
             img: './employee.png',
@@ -93,18 +65,46 @@ const Projects = () => {
             github: 'https://github.com/treehouseapps/Employee-Management-System'
         },
         {
-            id: 7,
-            name: 'TH-Weather',
-            subName: 'Weather App',
-            img: './weather.png',
-            desc: 'Search real-time weather by city with a responsive interface.',
+            id: 5,
+            name: 'Shopify',
+            subName: 'E-Commerce Web Application',
+            img: './ecommerce.png',
+            desc: 'A responsive E-Commerce app with cart, checkout, and modern UI.',
             about: [
-                'Search weather by city',
-                'View real-time weather data',
-                'Responsive and clean UI'
+                'Full shopping cart and checkout',
+                'Product listing and search',
+                'Modern, responsive user interface'
             ],
-            link: 'https://th-weather-app.vercel.app/',
-            github: 'https://github.com/treehouseapps/weather_app'
+            link: 'https://th-ecommerce.vercel.app/',
+            github: 'https://github.com/treehouseapps/E-commerce',
+        },
+        {
+            id: 6,
+            name: 'Kelal Guzo',
+            subName: 'Bus Ticket Booking System',
+            img: './bus.png',
+            desc: 'A full booking system with admin dashboard and reservation management.',
+            about: [
+                'Ticket booking and reservation management',
+                'Admin dashboard with controls',
+                'Real-time availability and updates'
+            ],
+            link: 'https://th-bus-booking.vercel.app/',
+            github: 'https://github.com/treehouseapps/Bus-booking'
+        },
+        {
+            id: 7,
+            name: 'TH-Trim',
+            subName: 'URL Shortener',
+            img: './ttrim.png',
+            desc: 'A fast and simple URL shortener with tracking features.',
+            about: [
+                'Shorten URLs quickly',
+                'Track click statistics',
+                'Simple and fast interface'
+            ],
+            link: 'https://ttrim.vercel.app',
+            github: 'https://github.com/treehouseapps/shortner'
         },
         {
             id: 8,
@@ -143,7 +143,7 @@ const Projects = () => {
         { label: "GitHub", Icon: GitHubIcon },
     ];
     return (
-        <Box id="projects" px={{ xs: 2, md: 8 }} py={10}>
+        <Box id="projects" px={{ xs: 2, md: 8 }} pt={10}>
 
             <Typography
                 textAlign="center"
@@ -261,6 +261,27 @@ const Projects = () => {
                         </Box>
                     );
                 })}
+            </Box>
+
+            <Box sx={{ mt: { xs: 4, md: 6 }, display: "flex", justifyContent: "center" }}>
+                <Button
+                    href="https://github.com/treehouseapps"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="text"
+                    sx={{
+                        borderRadius: "999px",
+                        color: "rgba(255,255,255,0.9)",
+                        border: "1px solid rgba(255,255,255,0.25)",
+                        px: { xs: 2, sm: 3 },
+                        py: 1,
+                        "&:hover": { borderColor: "rgba(79,172,254,0.9)", backgroundColor: "rgba(255,255,255,0.04)" },
+                        textTransform: "none",
+                    }}
+                >
+                    <GitHubIcon sx={{ mr: 1 }} />
+                    More on GitHub
+                </Button>
             </Box>
         </Box >
     );
