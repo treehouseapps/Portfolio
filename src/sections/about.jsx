@@ -9,7 +9,7 @@ const techSkills = [
     { icon: <CodeIcon color="primary" />, text: "MERN Stack & Next.js – MongoDB, Express, React, Node.js" },
     { icon: <DesignServicesIcon color="secondary" />, text: "Frontend – Responsive UIs with Material UI & Bootstrap" },
     { icon: <SecurityIcon color="error" />, text: "Backend – Secure APIs, JWT, bcrypt, OAuth" },
-    { icon: <CodeIcon color="primary" />, text: "API Integration – Third-party services (weather, movies, etc.)" },
+    { icon: <CodeIcon color="primary" />, text: "API Integration – Third-party services" },
 ];
 
 const softSkills = [
