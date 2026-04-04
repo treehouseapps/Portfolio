@@ -21,7 +21,7 @@ const Home = () => {
     });
 
     const quickLinks = [
-        { label: "Resume", href: "#", Icon: DescriptionRoundedIcon },
+        { label: "Resume", href: "/resume.pdf", Icon: DescriptionRoundedIcon },
         { label: "GitHub", href: "https://github.com/treehouseapps", Icon: GitHubIcon },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/berekettsegaye/", Icon: LinkedInIcon },
         { label: "Gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=bbekijunior1@gmail.com&su=Greeting&body=Hi%20There!", Icon: MailRoundedIcon },
@@ -159,6 +159,9 @@ const Home = () => {
                                             component={Link}
                                             href={item.href}
                                             underline="none"
+                                            target={item.label === "Resume" ? "_blank" : "_self"}
+                                            rel="noopener"
+                                            download={item.label === "Resume"}
                                             sx={{
                                                 display: "flex",
                                                 width: "100%",
