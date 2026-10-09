@@ -33,7 +33,7 @@ const Projects = () => {
         "End-to-end reservation system with document upload and PDF generation",
         "Advanced admin analytics with automated background job processing",
       ],
-      link: "https://github.com/treehouseapps/car-rental-v2",
+      link: "https://car-rental-v2-frontend.vercel.app/",
       github: "https://github.com/treehouseapps/car-rental-v2",
     },
     {
