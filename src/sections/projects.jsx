@@ -20,7 +20,7 @@ const Projects = () => {
         "Role-based authentication for Users, Admins, and Pharmacists",
       ],
       link: "https://afalagi-med.vercel.app/",
-      github: "https://github.com/treehouseapps/",
+      github: "https://github.com/treehouseapps/Afalagi",
     },
     {
       id: 2,
@@ -62,7 +62,7 @@ const Projects = () => {
         "Easy integration for web applications",
       ],
       link: "https://www.npmjs.com/package/treehouse-login",
-      github: "https://github.com/treehouseapps/",
+      github: "https://github.com/treehouseapps/auth-module",
     },
     {
       id: 5,
