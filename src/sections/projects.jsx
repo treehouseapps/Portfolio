@@ -10,6 +10,20 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      name: "SiraNet",
+      subName: "Job Search & Application Management Platform",
+      img: "./siranet.png",
+      desc: "A platform designed to help job seekers discover opportunities, manage job applications, and track their application progress in one place.",
+      about: [
+        "Job discovery and application tracking",
+        "Manage saved jobs and application stages",
+        "CV management and AI-powered job assistance",
+      ],
+      link: "https://sira-net.vercel.app/",
+      github: "https://github.com/treehouseapps",
+    },
+    {
+      id: 2,
       name: "Afalagi",
       subName: "Medicine Locator Website",
       img: "./afalagi.png",
@@ -23,7 +37,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/Afalagi",
     },
     {
-      id: 2,
+      id: 3,
       name: "Sami Rental System",
       subName: "Car Rental System",
       img: "./carrent.png",
@@ -37,7 +51,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/car-rental-v2",
     },
     {
-      id: 3,
+      id: 4,
       name: "Random Movies",
       subName: "Movie Explorer",
       img: "./movie.png",
@@ -51,7 +65,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/movie",
     },
     {
-      id: 4,
+      id: 5,
       name: "TH-Auth",
       subName: "Auth NPM Module",
       img: "./module.png",
@@ -65,7 +79,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/auth-module",
     },
     {
-      id: 5,
+      id: 6,
       name: "TH-Emp",
       subName: "Employee Management System",
       img: "./employee.png",
@@ -79,7 +93,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/Employee-Management-System",
     },
     {
-      id: 6,
+      id: 7,
       name: "Shopify",
       subName: "E-Commerce Web Application",
       img: "./ecommerce.png",
@@ -93,7 +107,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/E-commerce",
     },
     {
-      id: 7,
+      id: 8,
       name: "Kelal Guzo",
       subName: "Bus Ticket Booking System",
       img: "./bus.png",
@@ -107,7 +121,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/Bus-booking",
     },
     {
-      id: 8,
+      id: 9,
       name: "TH-Trim",
       subName: "URL Shortener",
       img: "./ttrim.png",
@@ -121,7 +135,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/shortner",
     },
     {
-      id: 9,
+      id: 10,
       name: "Wall-Note",
       subName: "Notebook App",
       img: "./note.png",
@@ -135,7 +149,7 @@ const Projects = () => {
       github: "https://github.com/treehouseapps/wallnote-frontend",
     },
     {
-      id: 10,
+      id: 11,
       name: "TH-Login",
       subName: "Authentication System",
       img: "./auth.png",
