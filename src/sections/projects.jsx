@@ -34,7 +34,7 @@ const Projects = () => {
         "Role-based authentication for Users, Admins, and Pharmacists",
       ],
       link: "https://afalagi-med.vercel.app/",
-      github: "https://github.com/treehouseapps/Afalagi",
+      github: "https://github.com/treehouseapps",
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const Projects = () => {
         "Advanced admin analytics with automated background job processing",
       ],
       link: "https://car-rental-v2-frontend.vercel.app/",
-      github: "https://github.com/treehouseapps/car-rental-v2",
+      github: "https://github.com/treehouseapps",
     },
     {
       id: 4,
